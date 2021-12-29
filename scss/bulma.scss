@@ -1,0 +1,35 @@
+@import "./fragments/vars";
+@import "./components/buttons";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    background-color: $light;
+    color: $dark ;
+}
+body {
+    padding: $gap;
+}
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+.mb {
+    margin-bottom: $gap;
+}
+.mb-2 {
+    margin-bottom: 2 * $gap;
+}
+.demo-container {
+    display: flex;
+    gap: $gap;
+}
+.container {
+    display: flex;
+    align-items: center;
+    height: auto;
+    width: auto;
+    padding: $gap;
+   
+}

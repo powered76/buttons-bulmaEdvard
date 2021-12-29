@@ -1,0 +1,182 @@
+@use "sass:color";
+@use "sass:math";
+
+.btn {
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    text-decoration: none;
+    line-height: 1em;
+
+
+    padding: math.div($gap,  2);
+    border-radius: math.div($gap, 2.66667);
+    border: 1px solid $br-color;
+    background-color: $white;
+    color: $dark;
+    transition-property: background-color, border-color ;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+    &:hover {
+        background-color: $light;
+        border-color: $br-hover;
+    }
+}
+.btn-white {
+    border-color: $white;
+    &:hover {
+        border-color: $light;
+    }
+}
+.btn-light {
+    background-color: $light;
+    border-color: $light;
+    &:hover {
+        background-color: color.adjust($light, $lightness: -5%);
+        border-color: color.adjust($light, $lightness: -5%);
+    }
+}
+.btn-dark {
+    background-color: $dark;
+    border-color: $dark;
+    color: $white;
+    &:hover {
+        background-color: color.adjust($dark, $lightness: 10%);
+        border-color: color.adjust($dark, $lightness: 10%);
+    }
+}
+.btn-black {
+    background-color: $black;
+    border-color: $black;
+    color: $white;
+    &:hover {
+        background-color: color.adjust($black, $lightness: 10%);
+        border-color: color.adjust($black, $lightness: 10%);
+    }
+}
+.btn-text, .btn-ghost {
+    background-color: transparent;
+    border-color: transparent;
+      &:hover {
+        background-color: transparent;
+        color: $link;
+    }
+}
+.btn-ghost {
+    color: $link;
+    &:hover {
+        color: $dark;
+    }
+}
+@each $name, $code in $colors {
+    .btn-#{$name} {
+        background-color: $code;
+        border-color: $code;
+        //@debug color.whiteness($code);
+        @if color.whiteness($code) < 45 {
+            color: $white;
+        } @else {
+            color: $dark;
+        }    
+            
+    &:hover {
+        background-color: color.adjust($code, $lightness: 5%);
+        border-color: color.adjust($code, $lightness: 5%);
+    }
+    &:active {
+        background-color: color.adjust($code, $lightness: -10%);
+        border-color: color.adjust($code, $lightness: -10%);
+
+    }
+}
+.indent {
+    margin: $gap 0;
+}
+@each $name, $code in $colors {
+    .btn-#{$name}-light2 {
+        background-color: color.adjust($code, $lightness: 35%);
+        border-color: color.adjust($code, $lightness: 35%);
+        color: $code;
+    
+    &:hover {
+        background-color: color.adjust($code, $lightness: 20%);
+        border-color: color.adjust($code, $lightness: 20%);
+    }
+    &:active {
+        background-color: color.adjust($code, $lightness: -3%);
+        border-color: color.adjust($code, $lightness: -3%);
+
+    }
+
+}
+
+
+.btn-small {
+    
+    font-size: 12px;
+    margin: $gap/2;
+   
+}
+.btn-normal {
+    font-size: $gap;
+    margin: $gap/2;
+
+}
+.btn-medium {
+    font-size: 20px;
+    margin: $gap/2;
+}
+.btn-large {
+    font-size: 24px;
+    margin: $gap/2;
+}
+@each $name, $code in $colors {
+    .btn-#{$name}-outline {
+        border-color: color.adjust($code, $lightness: 35%);
+        color: $code;
+    
+    &:hover {
+        outline: 1px, solid ;
+        border-color: color.adjust($code, $lightness: 20%);
+        color: color.adjust($code, $lightness: -15%);
+    }
+    &:active {
+        outline: 3px, solid ;
+        border-color: color.adjust($code, $lightness: 10%);
+        color: color.adjust($code, $lightness: -30%);
+
+    }
+}
+.btn-dark-rounded {
+    border-radius: 999px;
+}
+}
+@each $name, $code in $colors {
+    .btn-#{$name}-rounded {
+        border-color: color.adjust($code, $lightness: 35%);
+        color: $code;
+        border-radius: 999px;
+    
+        &:hover {
+            outline: 1px, solid ;
+            border-color: color.adjust($code, $lightness: 20%);
+            color: color.adjust($code, $lightness: -15%);
+        }
+        &:active {
+            outline: 3px, solid ;
+            border-color: color.adjust($code, $lightness: 10%);
+            color: color.adjust($code, $lightness: -30%);
+    
+
+    }
+    
+}
+.btn-github {
+    border-radius: 999px;
+    width: 109px;
+    height: 40px;
+}
+}
+}
+}

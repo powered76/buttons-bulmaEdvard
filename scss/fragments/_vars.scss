@@ -1,0 +1,31 @@
+// @use 'sass:color';
+$primary: #00D1B2;
+$secondary: #5d6569;
+$danger: #FF3860;
+$link: #3273DC;
+$info: #209CEE;
+$success: #48C774;
+$warning: #FFDC7D;
+$dark: #363636;
+$light: #F5F5F5;
+$black: #0A0A0A;
+$white: #FFFFFF;
+$br-color: #DBDBDB;
+$br-hover: #B5B5B5;
+$br-focus: #485FC7;
+
+$disabled-opacity: .5;
+$gap: 1rem;
+
+$colors: (
+    primary: $primary,
+    secondary: $secondary,
+    danger: $danger,
+    link: $link,
+    info: $info,
+    success: $success,
+    warning: $warning,
+    
+    );
+
+// @debug color.adjust($primary, $lightness: 40%);
